@@ -1,0 +1,7 @@
+Gromov 870001 2 4 5
+Lachev Vladislav 932220 5 5 5
+Ivanov Vezdesyhev 87002 3 3 5
+Radishev Petr 87002 3 4 6
+Lobov Vladimir 87002 3 4 5
+Panishev Kolya 87001 2 5 5
+Rapoev Maxim 87002 3 3 5

@@ -1,0 +1,3 @@
+/home/len/CLionProjects/mylib/cmake-build-debug/CMakeFiles/mylib.dir
+/home/len/CLionProjects/mylib/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/len/CLionProjects/mylib/cmake-build-debug/CMakeFiles/rebuild_cache.dir

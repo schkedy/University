@@ -1,0 +1,3 @@
+/home/len/CLionProjects/University/Builder/CMakeFiles/University.dir
+/home/len/CLionProjects/University/Builder/CMakeFiles/edit_cache.dir
+/home/len/CLionProjects/University/Builder/CMakeFiles/rebuild_cache.dir
