@@ -4,5 +4,5 @@ project(University)
 
 
 
-add_executable(University lab6.cpp)
+add_executable(University lab7.cpp)
 
