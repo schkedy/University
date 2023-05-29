@@ -9,40 +9,20 @@
 #include <iomanip>
 
 using namespace std;
-struct Usel {
-    int data; // данные
-    Usel *next; //ссылка на следующий узел
-};
 struct LUsel {
-    long data; // данные
+    float data; // данные
     LUsel *next; //ссылка на следующий узел
-};
-struct Stack {
-    Usel *head;
-
-    Stack() { head = 0; }; // Конструктор
-    ~Stack() { clear(); }; // Деструктор
-    void push(int k);
-
-    int pop();
-
-    int top();
-
-    bool empty();
-
-    void clear();
-
 };
 struct LStack {
     LUsel *head;
 
     LStack() { head = 0; }; // Конструктор
     ~LStack() { clear(); }; // Деструктор
-    void push(long k);
+    void push(float k);
 
-    int pop();
+    float pop();
 
-    int top();
+    float top();
 
     bool empty();
 
@@ -50,72 +30,7 @@ struct LStack {
 
 };
 
-Usel *push(Usel *head, int dataNew) {
-    Usel *p = new Usel; //Создаем новый узел
-    p->data = dataNew; // Пишем в него данные
-    p->next = head; // В next  пишем ссылку предыдущей верхушки
-    head = p; // Меняем верхушку
-    return head; // Возвращаем верхушку
-}
-
-Usel *pop(Usel *head, int *dataGet) {
-    *dataGet = head->data; // Сохраняем данные из бывшей верхушки
-    Usel *p = head;  // делаем указатель чтобы изменить верхушку
-    head = head->next; // меняем верхушку
-    delete p;        // удаляем бывшую верхушку
-    return head;
-}
-
-int top(Usel *head) {
-    return head->data;
-}
-
-bool empty(Usel *head) {
-    if (head == NULL) return true;
-    return false;
-}
-
-void clear(Usel *head) {
-    int k;
-    while (head) head = pop(head, NULL); // Не нужно сохранять данные
-}
-
-void output(Usel *head) {
-    Usel *p;
-    for (p = head; p != 0; p = p->next) // Начинаем с вершины и идем пока не дойдем до конца
-        cout << p->data << ' ';
-}
-
-void Stack::clear() {
-    int k;
-    while (head) k = pop();
-}
-
-void Stack::push(int k) {
-    Usel *p = new Usel;
-    p->data = k;
-    p->next = head;
-    head = p;
-}
-
-int Stack::pop() {
-    int k = head->data;
-    Usel *p = head;
-    head = head->next;
-    delete p;
-    return k;
-}
-
-int Stack::top() {
-    return head->data;
-}
-
-bool Stack::empty() {
-    if (head == 0) return true;
-    return false;
-}
-
-LUsel *push(LUsel *head, long dataNew) {
+LUsel *push(LUsel *head, float dataNew) {
     LUsel *p = new LUsel; //Создаем новый узел
     p->data = dataNew; // Пишем в него данные
     p->next = head; // В next  пишем ссылку предыдущей верхушки
@@ -123,7 +38,7 @@ LUsel *push(LUsel *head, long dataNew) {
     return head; // Возвращаем верхушку
 }
 
-LUsel *pop(LUsel *head, long *dataGet) {
+LUsel *pop(LUsel *head, float *dataGet) {
     *dataGet = head->data; // Сохраняем данные из бывшей верхушки
     LUsel *p = head;  // делаем указатель чтобы изменить верхушку
     head = head->next; // меняем верхушку
@@ -131,7 +46,7 @@ LUsel *pop(LUsel *head, long *dataGet) {
     return head;
 }
 
-int top(LUsel *head) {
+float top(LUsel *head) {
     return head->data;
 }
 
@@ -141,7 +56,7 @@ bool empty(LUsel *head) {
 }
 
 void clear(LUsel *head) {
-    int k;
+    float k;
     while (head) head = pop(head, NULL); // Не нужно сохранять данные
 }
 
@@ -152,26 +67,26 @@ void output(LUsel *head) {
 }
 
 void LStack::clear() {
-    int k;
+    float k;
     while (head) k = pop();
 }
 
-void LStack::push(long k) {
+void LStack::push(float k) {
     LUsel *p = new LUsel;
     p->data = k;
     p->next = head;
     head = p;
 }
 
-int LStack::pop() {
-    int k = head->data;
+float LStack::pop() {
+    float k = head->data;
     LUsel *p = head;
     head = head->next;
     delete p;
     return k;
 }
 
-int LStack::top() {
+float LStack::top() {
     return head->data;
 }
 
@@ -226,7 +141,6 @@ int main() {
             Znak.push(s[i]); //после этого кладем в стек текущую операцию,
             Prior.push(prioritet(s[i]));
         }
-    //if (strlen(s))
     while (!Znak.empty()) {
         if (Znak.top() == '(') {
             perror("Отсутствует ')'");
@@ -245,7 +159,7 @@ int main() {
             cin >> Tab[i];
         }
     }
-    long x, y, z, k;
+    float x, y, z, k;
 
     for (i = 0; p[i];) {
         while (p[i] && (digit(p[i]) || letter(p[i]) || p[i] == ' ')) {
@@ -294,4 +208,4 @@ int main() {
     cout << endl << "Значение ПОЛИЗ: " << z << endl;
     return 0;
 
-}
+}//Сформировать односвязный список с фиктивной головой вставить элемент после определенного ключа

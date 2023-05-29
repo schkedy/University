@@ -311,7 +311,7 @@ int searchBinary(int *array, int size, int a) {
         int move = (L + R) / 2;
         if (a == array[move])
             return move;
-        if (array[move] < a) {
+        if ( a > array[move]) {
             L = move + 1;
         }
         if (a < array[move])
