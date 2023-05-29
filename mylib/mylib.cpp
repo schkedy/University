@@ -403,6 +403,10 @@ bool digit(char ch) {
     if ('0' <= ch && ch <= '9') return true;
     return false;
 }
+bool letter(char ch) {
+    if ('a' <= ch && ch <= 'z') return true;
+    return false;
+}
 
 int prioritet(char s) {
     switch (s) {
