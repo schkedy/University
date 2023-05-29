@@ -49,8 +49,8 @@ cmake_ninja_workdir = /home/len/CLionProjects/University/Builder/
 
 build cmake_object_order_depends_target_University: phony || CMakeFiles/University.dir
 
-build CMakeFiles/University.dir/lab7.cpp.o: CXX_COMPILER__University_Debug /home/len/CLionProjects/University/lab7.cpp || cmake_object_order_depends_target_University
-  DEP_FILE = CMakeFiles/University.dir/lab7.cpp.o.d
+build CMakeFiles/University.dir/lab10.cpp.o: CXX_COMPILER__University_Debug /home/len/CLionProjects/University/lab10.cpp || cmake_object_order_depends_target_University
+  DEP_FILE = CMakeFiles/University.dir/lab10.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/University.dir
   OBJECT_FILE_DIR = CMakeFiles/University.dir
@@ -63,7 +63,7 @@ build CMakeFiles/University.dir/lab7.cpp.o: CXX_COMPILER__University_Debug /home
 #############################################
 # Link the executable University
 
-build University: CXX_EXECUTABLE_LINKER__University_Debug CMakeFiles/University.dir/lab7.cpp.o
+build University: CXX_EXECUTABLE_LINKER__University_Debug CMakeFiles/University.dir/lab10.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/University.dir
   POST_BUILD = :
