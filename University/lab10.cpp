@@ -51,6 +51,7 @@ struct List {
     void printList();
 
     void addAfterKey(int key, int data);
+    void addAtPos(int pos, int data);
 
     void dellAfterKey(int key);
 };
@@ -161,10 +162,17 @@ void List::dellAfterKey(int key) {
 }
 int main(){
     List list;
-    list.form(4);
+    int n,k;
+    cin >> n;
+    list.form(n);
     list.printList();
+    puts("Введите ключ");
+    cin >> k;
     //list.dellAfterKey(3);
-    //list.addAfterKey(3,100);
+    //list.delAfter(list.findKey(k));
+    list.addAfterKey(k,100);
     cout << endl;
+    list.printList();
+    list.clear();
     list.printList();
 }
